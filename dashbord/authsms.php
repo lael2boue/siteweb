@@ -15,13 +15,12 @@ $_SESSION['pwd']="";
 $login = $_SESSION['login'];
 $password = $_SESSION['pwd'];
 
-//"username=Your Username&password=Your Password&mt=Message Type&fl=Sent As Flash Message &sid=Sender Name&mno=Mobile Number&ipcl=Your Server Ip Address&msg=Message"
 
 // VERIFICATION SI LA METHODE EST "POST"
     if($_SERVER["REQUEST_METHOD"] == "GET")
     {
 
-        if($login != "sylvere18" || $password != "web43947")
+        if($login != $_SESSION['login'] || $password != $_SESSION['pwd'])
         {
             die("non");
         }else{
@@ -33,7 +32,7 @@ $password = $_SESSION['pwd'];
             $msgType = 0;
             $flash = 0;
             $ip = $_SERVER['REMOTE_ADDR'];
-            $url="https://1s2u.com/sms/sendsms/sendsms.asp?username=" . $login . "&password=" .$password. "&mt=" .$msgType. "&fl=" .$flash. "&sid=" .$sender. "&mno=" .$recipient. "&ipcl=" .$ip. "&msg=" .$message;
+            $url="serverlink?username=" . $login . "&password=" .$password. "&mt=" .$msgType. "&fl=" .$flash. "&sid=" .$sender. "&mno=" .$recipient. "&ipcl=" .$ip. "&msg=" .$message;
 
             echo $url;
         }
