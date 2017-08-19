@@ -7,8 +7,8 @@ $_SESSION['sender'] = $_GET['sender'];
 $_SESSION['recipient'] = $_GET['recipient'];
 $_SESSION['message'] = str_replace("â","a",$_GET['message']);
 
-$_SESSION['login']="sylvere18";
-$_SESSION['pwd']="web43947";
+$_SESSION['login']="";
+$_SESSION['pwd']="";
 
 //DEFINITION DES VARIABLES
 
